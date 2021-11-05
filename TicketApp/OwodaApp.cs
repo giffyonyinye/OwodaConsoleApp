@@ -65,7 +65,6 @@ namespace TicketApp
             Receipt();           
         }
 
-
         public void Receipt()
         {
             DateTime now = DateTime.Now;
