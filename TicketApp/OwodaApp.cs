@@ -74,13 +74,23 @@ namespace TicketApp
             Console.WriteLine("\n \npress 1 to print receipt");
             string receipt = Console.ReadLine();
 
-            if(receipt == "1")
+
+            if(receipt == "1" && totalNumberOfTicket > 0)
             {
 
                 Console.WriteLine($"Time: {now}");
+                Console.WriteLine($"Total Ticket sold:{totalNumberOfTicket} ");
                 Console.WriteLine($"Receipt Number: {receiptNumber.Next()}");
                 Console.WriteLine($"Total Available Balance: {AvailableBalance}");
+            } 
+            else
+            {
+                Console.Write("oops You have not made any sales");
             }
+
+
+
+
 
            
 
