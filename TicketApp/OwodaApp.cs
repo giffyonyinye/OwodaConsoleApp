@@ -8,10 +8,10 @@ namespace TicketApp
 {
     public class OwodaApp
     {
-        public double accountBalance = 0;
-        public int totalNumberOfTicket = 0;
-        public double dailyTicketCost = 100;
-        public double bossPercentage = 0.65;
+        public double AccountBalance = 0;
+        public int TotalNumberOfTicket = 0;
+        public double DailyTicketCost = 100;
+        public double BossPercentage = 0.65;
         public string TicketSelected { get; set; }
         public double AvailableBalance { get; set; }
 
@@ -26,7 +26,7 @@ namespace TicketApp
             while (userChoice == "1")
             {
                 TotalAmountInAccount();
-                totalNumberOfTicket++;
+                TotalNumberOfTicket++;
                 Random ticketNumber = new Random();
                 Console.WriteLine($"Ticket Sold! The Ticket number is {ticketNumber.Next()}");
                 Console.WriteLine("Press 1 to sell ticket \nPress 2 to check account summary ");
@@ -39,28 +39,28 @@ namespace TicketApp
         {
             Console.WriteLine("press 1 to select daily ticket \npress 2 for monthly ticket");
             TicketSelected = Console.ReadLine();
-            accountBalance = accountBalance + TicketTypeCost(TicketSelected);
+            AccountBalance = AccountBalance + TicketTypeCost(TicketSelected);
         }
 
         public double TicketTypeCost(string userChoice)
         {
             if (userChoice == "1")
             {
-                return dailyTicketCost;
+                return DailyTicketCost;
             }
             else
             {
-                return dailyTicketCost / 2 * 30;
+                return DailyTicketCost / 2 * 30;
             }
         }
 
         public void AccountSummary()
         {
-            Console.WriteLine($"You have sold {totalNumberOfTicket} tickets");
-            Console.WriteLine($"Your total balance is {accountBalance} naira");
-            double bossCharges = accountBalance * bossPercentage;
+            Console.WriteLine($"You have sold {TotalNumberOfTicket} tickets");
+            Console.WriteLine($"Your total balance is {AccountBalance} naira");
+            double bossCharges = AccountBalance * BossPercentage;
             Console.WriteLine($" {bossCharges} naira will be charged for Boss payment");
-            AvailableBalance = accountBalance - bossCharges;
+            AvailableBalance = AccountBalance - bossCharges;
             Console.WriteLine($"your available balance is {AvailableBalance}");
             Receipt();           
         }
@@ -74,11 +74,11 @@ namespace TicketApp
             string receipt = Console.ReadLine();
 
 
-            if(receipt == "1" && totalNumberOfTicket > 0)
+            if(receipt == "1" && TotalNumberOfTicket > 0)
             {
 
                 Console.WriteLine($"Time: {now}");
-                Console.WriteLine($"Total Ticket sold:{totalNumberOfTicket} ");
+                Console.WriteLine($"Total Ticket sold:{TotalNumberOfTicket} ");
                 Console.WriteLine($"Receipt Number: {receiptNumber.Next()}");
                 Console.WriteLine($"Total Available Balance: {AvailableBalance}");
             } 
