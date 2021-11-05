@@ -7,7 +7,7 @@ namespace TicketApp
         static void Main(string[] args)
         {           
             var owodaApp = new OwodaApp();
-            owodaApp.Welcome();
+            owodaApp.Owoda();
         }
 
     }
